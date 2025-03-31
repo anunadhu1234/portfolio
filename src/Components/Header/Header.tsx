@@ -11,7 +11,7 @@ function Header() {
     "Contact"
   ]
   const [hovered,setHovered] = useState(Array(navBtn.length).fill(false));
-  const func1 = (i)=>{
+  const func1 = (i:number)=>{
     const upd = [...hovered];
     upd[i]=!upd[i];
     setHovered(upd);
