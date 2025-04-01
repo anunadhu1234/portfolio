@@ -33,7 +33,7 @@ function Header() {
   },[])
 
   return (
-    <div id="aa" className={`fixed top-0 flex justify-around ${scrolled?'bg-[#0b071e] w-4/5 ml-48 rounded-[25px]':'bg-transparent w-full'} z-50 `}>
+    <div id="aa" className={`fixed  top-0 flex justify-around ${scrolled?'bg-[#0b071e] w-4/5 ml-48 rounded-[25px] border border-[#523ab9]':'bg-transparent w-full'} z-50 `}>
       <h1 className="text-[28px] text-[#523ab9] font-bold py-3">Portfolio</h1>
       <div className="lg:flex hidden text-white justify-between py-4 gap-12 text-[20px]">
         {navBtn.map((btn, i) => (
