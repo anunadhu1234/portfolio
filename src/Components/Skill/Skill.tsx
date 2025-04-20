@@ -35,8 +35,11 @@ const Skill = () => {
         "https://images.ctfassets.net/aq13lwl6616q/7cS8gBoWulxkWNWEm0FspJ/c7eb42dd82e27279307f8b9fc9b136fa/nodejs_cover_photo_smaller_size.png",
       ];
       return (
+        <div>
         <div className="max-w-screen rounded-3xl blur(3px)">
           <ThreeDMarquee images={images} />
+        </div>
+        <div className="z-20 bg-black opacity-0.6 max-w-screen max-h-screen"> </div>
         </div>
       );
     }
