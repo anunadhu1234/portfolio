@@ -8,8 +8,8 @@ function Header() {
     "Home",
     "About",
     "Skill",
+    "Education",
     "Projects",
-    "Contact"
   ];
   
   const [hovered, setHovered] = useState(Array(navBtn.length).fill(false));
