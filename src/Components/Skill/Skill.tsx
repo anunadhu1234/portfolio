@@ -2,28 +2,7 @@
 
 import { AnimatedTestimonials } from "../ui/animated-testimonials";
 import { motion } from "framer-motion";
-import aws from "../../assets/aws.png";
-import react from "../../assets/react.png";
-import node from "../../assets/node.png";
-import python from "../../assets/python.png";
-import mongo from "../../assets/mongo.png";
-import express from "../../assets/express.png";
-import c from "../../assets/c++.png";
-import cn from "../../assets/cn.png";
-import dl from "../../assets/dl.png";
-import dsa from "../../assets/dsa.png";
-import html from "../../assets/html.png";
-import css from "../../assets/css.png";
-import js from "../../assets/js.png";
-import github from "../../assets/github.png";
-import gitlab from "../../assets/gitlab.png";
-import ml from "../../assets/ml.png";
-import sql from "../../assets/sql.png";
-import mysql from "../../assets/mysql.png";
-import os from "../../assets/os.png";
-import tcss from "../../assets/tcss.png";
-import vite from "../../assets/vite.png";
-import cp from "../../assets/cp.png";
+import { useState } from "react";
 
 
 
@@ -33,7 +12,7 @@ export function Skill() {
     {
       quote: "",
       name: "Amazon Web Services",
-      designation: "Cloud Computing",
+      designation: "Cloud",
       src: "https://res.cloudinary.com/dmr86c1jv/image/upload/v1745687814/aws_eif0j1.png",
     },
 
@@ -178,20 +157,26 @@ export function Skill() {
   const btn = [
     "All",
     "Core Concepts",
-    "Cloud Computing",
+    "Cloud",
     "Programming Languages",
     "Web Development",
     "Developer Tools",
     "Databases",
     "Problem Solving",
   ]
+  const [test,setTest] = useState(testimonials);
+  const [i,setI] = useState(0);
 
   return <div className="w-[100%] flex flex-col items-center bg-[#0b071e]">
     <motion.h1 initial={{ x: -50, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duraion: 1 }} viewport={{ once: false, amount: 0.3 }} className="text-[50px] text-[#7551fb]">Skills</motion.h1> 
-    <div className="flex flex-wrap justify-center mt-3 mb-1">
+    <motion.div  className="flex flex-wrap justify-center mt-3 mb-1">
       {btn.map((item, index) => (
-        <button key={index} className="border shadow-lg font-bold text-white cursor-pointer hover:bg-[#7551fb] hover:!text-opacity-0 py-1 border-[#7551fb] px-4 border-[2px] first:rounded-l-lg last:rounded-r-lg">{item}</button>))}
-    </div>
-    <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: false, amount: 0.3 }} transition={{ duration: 1 }}><AnimatedTestimonials testimonials={testimonials} /></motion.div> 
+        <motion.button initial={{y:50, opacity:0}} whileInView={{y:0,opacity:1}} transition={{duration: 0.5, delay:index*0.5+1}} viewport={{once:false, amount:0.3}} key={index} onClick={()=>{setI(index); console.log(i);
+if(item!=="All"){
+  setTest(testimonials.filter((test) => test.designation === item));
+        }else setTest(testimonials)}} className={`border shadow-lg font-bold text-white ${i===index?'bg-[#7551fb]':''} cursor-pointer hover:bg-[#7551fb] hover:!text-opacity-0 py-1 border-[#7551fb] px-4 border-[2px] first:rounded-l-lg last:rounded-r-lg`}>{item}</motion.button>
+        ))}
+    </motion.div>
+    <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: false, amount: 0.3 }} transition={{ duration: 1, delay:5 }}><AnimatedTestimonials testimonials={test} /></motion.div> 
     </div>;
 }
