@@ -3,6 +3,7 @@
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { useOutsideClick } from "@/hooks/use-outside-click";
+import proshop from "../../assets/proshop.png";
 
 export function Project() {
     const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
@@ -31,7 +32,7 @@ export function Project() {
     useOutsideClick(ref, () => setActive(null));
 
     return (
-        <div className="bg-[#0b071e] flex flex-col items-center justify-center w-full">
+        <div className="bg-[#0b071e] flex flex-col items-center justify-center pb-8 w-full">
             <div className="flex flex-col items-center justify-center py-20 font-sans antialiased md:max-w-4xl md:px-8 lg:px-12">
                 <h1 className="text-[50px] text-[#7551fb]">Projects</h1>
                 <p className="text-neutral-600 dark:text-neutral-400 text-center max-w-[500px] mt-2">
@@ -111,7 +112,7 @@ export function Project() {
                                         target="_blank"
                                         className="px-4 py-3 text-sm rounded-full font-bold bg-green-500 text-white"
                                     >
-                                        {active.ctaText}
+                                        {active.ctaText1}
                                     </motion.a>
                                 </div>
                                 <div className="pt-4 relative px-4">
@@ -132,7 +133,7 @@ export function Project() {
                     </div>
                 ) : null}
             </AnimatePresence>
-            <ul className="grid grid-cols-3 mx-auto max-w-screen gap-4">
+            <ul className="grid grid-cols-3 mx-auto max-w-[90%] gap-4">
                 {cards.map((card, index) => (
                     <motion.div
                         layoutId={`card-${card.title}-${id}`}
@@ -213,114 +214,93 @@ export const CloseIcon = () => {
 
 const cards = [
     {
-        description: "Lana Del Rey",
-        title: "Summertime Sadness",
-        src: "https://assets.aceternity.com/demos/lana-del-rey.jpeg",
-        ctaText: "Play",
-        ctaLink: "https://ui.aceternity.com/templates",
-        content: () => {
-            return (
-                <p>
-                    Lana Del Rey, an iconic American singer-songwriter, is celebrated for
-                    her melancholic and cinematic music style. Born Elizabeth Woolridge
-                    Grant in New York City, she has captivated audiences worldwide with
-                    her haunting voice and introspective lyrics. <br /> <br /> Her songs
-                    often explore themes of tragic romance, glamour, and melancholia,
-                    drawing inspiration from both contemporary and vintage pop culture.
-                    With a career that has seen numerous critically acclaimed albums, Lana
-                    Del Rey has established herself as a unique and influential figure in
-                    the music industry, earning a dedicated fan base and numerous
-                    accolades.
-                </p>
-            );
-        },
+      description: "React JS, Node JS, MongoDB, Express JS, Vite, TailwindCSS",
+      title: "ProShop",
+      src: "https://res.cloudinary.com/dmr86c1jv/image/upload/v1746199706/proshop_ceijjk.png", // Replace with actual image
+      ctaText: "Details",
+      ctaText1: "Github",
+      ctaLink: "https://github.com/anunadhu1234/ProShop",
+      content: () => {
+        return (
+          <p>
+            • Built a responsive e-commerce website using the MERN stack.<br />
+            • Implemented JWT-based authentication and bcrypt password hashing for secure user login.<br />
+            • Developed an efficient admin panel using Vite to manage products, users, and orders.<br />
+            • Integrated PayPal for secure payments with multiple payment options.
+          </p>
+        );
+      },
     },
     {
-        description: "Babbu Maan",
-        title: "Mitran Di Chhatri",
-        src: "https://assets.aceternity.com/demos/babbu-maan.jpeg",
-        ctaText: "Play",
-        ctaLink: "https://ui.aceternity.com/templates",
-        content: () => {
-            return (
-                <p>
-                    Babu Maan, a legendary Punjabi singer, is renowned for his soulful
-                    voice and profound lyrics that resonate deeply with his audience. Born
-                    in the village of Khant Maanpur in Punjab, India, he has become a
-                    cultural icon in the Punjabi music industry. <br /> <br /> His songs
-                    often reflect the struggles and triumphs of everyday life, capturing
-                    the essence of Punjabi culture and traditions. With a career spanning
-                    over two decades, Babu Maan has released numerous hit albums and
-                    singles that have garnered him a massive fan following both in India
-                    and abroad.
-                </p>
-            );
-        },
-    },
-
-    {
-        description: "Metallica",
-        title: "For Whom The Bell Tolls",
-        src: "https://assets.aceternity.com/demos/metallica.jpeg",
-        ctaText: "Play",
-        ctaLink: "https://ui.aceternity.com/templates",
-        content: () => {
-            return (
-                <p>
-                    Metallica, an iconic American heavy metal band, is renowned for their
-                    powerful sound and intense performances that resonate deeply with
-                    their audience. Formed in Los Angeles, California, they have become a
-                    cultural icon in the heavy metal music industry. <br /> <br /> Their
-                    songs often reflect themes of aggression, social issues, and personal
-                    struggles, capturing the essence of the heavy metal genre. With a
-                    career spanning over four decades, Metallica has released numerous hit
-                    albums and singles that have garnered them a massive fan following
-                    both in the United States and abroad.
-                </p>
-            );
-        },
+      description: "Python, TensorFlow, Keras, CNN, Data Visualization",
+      title: "Fashion MNIST",
+      src: "https://complex-valued-neural-networks.readthedocs.io/en/latest/_images/code_examples_fashion_mnist_22_0.png", // Replace with actual image
+      ctaText: "Details",
+        ctaText1: "Github",
+      ctaLink: "https://github.com/anunadhu1234/Fashion_MNIST_image_classifier",
+      content: () => {
+        return (
+          <p>
+            • Designed and implemented a CNN using TensorFlow/Keras for fashion item classification.<br />
+            • Achieved over 90% accuracy on the test set using evaluation metrics like accuracy, precision, and recall.<br />
+            • Created visualizations for predictions, misclassifications, and feature maps to interpret the model's behavior.
+          </p>
+        );
+      },
     },
     {
-        description: "Led Zeppelin",
-        title: "Stairway To Heaven",
-        src: "https://assets.aceternity.com/demos/led-zeppelin.jpeg",
-        ctaText: "Play",
-        ctaLink: "https://ui.aceternity.com/templates",
-        content: () => {
-            return (
-                <p>
-                    Led Zeppelin, a legendary British rock band, is renowned for their
-                    innovative sound and profound impact on the music industry. Formed in
-                    London in 1968, they have become a cultural icon in the rock music
-                    world. <br /> <br /> Their songs often reflect a blend of blues, hard
-                    rock, and folk music, capturing the essence of the 1970s rock era.
-                    With a career spanning over a decade, Led Zeppelin has released
-                    numerous hit albums and singles that have garnered them a massive fan
-                    following both in the United Kingdom and abroad.
-                </p>
-            );
-        },
+      description: "SQL, DBMS, ER Diagrams, Normalization",
+      title: "CourseCrafter",
+      src: "https://res.cloudinary.com/dmr86c1jv/image/upload/v1746200011/Screenshot_2025-05-02_210304_diswvz.png", // Replace with actual image
+      ctaText: "Details",
+        ctaText1: "Github",
+      ctaLink: "https://drive.google.com/file/d/1BGj2fdNW9ibEHiHJX75Lir6zs-HyRtVT/view?usp=sharing",
+      content: () => {
+        return (
+          <p>
+            • Built an online learning platform demonstrating DBMS and SQL concepts.<br />
+            • Used advanced normalization to ensure data integrity across entities like users and courses.<br />
+            • Designed an ER diagram and relational schema for a structured database design.<br />
+            • Wrote optimized SQL queries to extract meaningful data from the database.
+          </p>
+        );
+      },
     },
     {
-        description: "Mustafa Zahid",
-        title: "Toh Phir Aao",
-        src: "https://assets.aceternity.com/demos/toh-phir-aao.jpeg",
-        ctaText: "Play",
-        ctaLink: "https://ui.aceternity.com/templates",
+        description: "React JS, Node JS, MongoDB, Express JS, TailwindCSS",
+        title: "Vistaraft",
+        src: "https://res.cloudinary.com/dmr86c1jv/image/upload/v1746200291/Screenshot_2025-05-02_210759_xglola.png", // Replace with an actual screenshot of your site
+        ctaText: "Details",
+        ctaText1: "Github",
+        ctaLink: "https://github.com/itsadit/vistaraft",
         content: () => {
-            return (
-                <p>
-                    &quot;Aawarapan&quot;, a Bollywood movie starring Emraan Hashmi, is
-                    renowned for its intense storyline and powerful performances. Directed
-                    by Mohit Suri, the film has become a significant work in the Indian
-                    film industry. <br /> <br /> The movie explores themes of love,
-                    redemption, and sacrifice, capturing the essence of human emotions and
-                    relationships. With a gripping narrative and memorable music,
-                    &quot;Aawarapan&quot; has garnered a massive fan following both in
-                    India and abroad, solidifying Emraan Hashmi&apos;s status as a
-                    versatile actor.
-                </p>
-            );
+          return (
+            <p>
+              • Developed a full-stack travel and experience booking platform using the MERN stack.<br />
+              • Designed a responsive and modern user interface with TailwindCSS.<br />
+              • Integrated dynamic components and APIs to handle user interactions, bookings, and listings.<br />
+              • Ensured seamless data flow and secure backend connectivity for real-time updates and reliability.
+            </p>
+          );
         },
-    },
-];
+      },
+      {
+        description: "React JS, Node JS, MongoDB, TailwindCSS, Socket.IO",
+        title: "Snapgram",
+        src: "https://res.cloudinary.com/dmr86c1jv/image/upload/v1746200480/Screenshot_2025-05-02_211056_whzz5a.png", // Replace with actual screenshot
+        ctaText: "Details",
+        ctaText1: "Github",
+        ctaLink: "https://github.com/anunadhu1234/FullStack-SocialMediaApp-main", // Replace with actual GitHub or live demo link if available
+        content: () => {
+          return (
+            <p>
+              • Developed a dynamic social media website using the MERN stack.<br />
+              • Implemented real-time messaging and notifications using Socket.IO for instant communication.<br />
+              • Created interactive features like posts, comments, likes, and user profiles to increase engagement.<br />
+              • Integrated secure user authentication and authorization using JWT and bcrypt.
+            </p>
+          );
+        },
+      }
+  ];
+  
