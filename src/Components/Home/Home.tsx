@@ -8,7 +8,7 @@ import DownloadDoneIcon from '@mui/icons-material/DownloadDone';
 import { Link } from 'react-router-dom';
 function Home() {
   const [typewriter, setTypewriter] = useState(false);
-  const s = "I'm a Software Developer skilled in MERN Stack, Python, Machine Learning, and Cloud Computing (AWS). I love building scalable web applications, optimizing backend performance, and working with cutting-edge technologies to solve real-world problems.";
+  
   useEffect(() => {
     setTimeout(() => {
       setTypewriter(true);
@@ -53,26 +53,30 @@ function Home() {
           <div className="relative top-[35vh] left-[10%]">
             <div className="flex text-[28px] font-medium">
               <motion.div initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1 }}>Hello,</motion.div>
-              <motion.span initial={{ opacity: 0, x: 100 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 1 }}> I am</motion.span>
+              <motion.span initial={{ opacity: 0, x: 100 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 1 }}> {' '}This is</motion.span>
             </div>
             <motion.p initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 2 }} className="text-[40px] font-bold">Anurag Ghosh</motion.p>
-            <div className="w-4/5">
+            <div className="w-4/5"> I am a {' '}
               {typewriter && (
+                <span className="text-[25px] font-bold text-[#7551fb]">
                 <Typewriter
-                  words={[s]}
-                  loop={1}
+                  words={["Software Developer", "MERN Stack Developer", "Machine Learning Enthusiast", "Cloud Computing Enthusiast"]}
+                  loop={Infinity}
                   cursor
                   cursorBlinking
                   cursorStyle='|'
                   typeSpeed={10}
+                  deleteSpeed={10}
+                  
                 />
+                </span>
               )}
             </div>
-            <motion.button initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 5.8 }} className={`m-3 ${btn ? 'z-4' : ''} cursor-pointer`}><Link target='_blank' to="https://www.linkedin.com/in/anurag-ghosh-b6307b220?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B521wWzu6Ta6s07uH%2BM5GhA%3D%3D"><FaLinkedin onMouseEnter={() => setBtn(true)} onMouseLeave={() => setBtn(false)} size={30} /></Link></motion.button>
-            <motion.button initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 6.3 }} className='m-3 cursor-pointer'><Link target='_blank' to="https://www.instagram.com/i_am_anurag_ghosh/"><FaInstagram size={30} /></Link></motion.button>
-            <motion.button initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 6.8 }} className='m-3 cursor-pointer'><Link target='_blank' to="https://wa.me/8175808205"><FaWhatsapp size={30} /></Link></motion.button>
-            <motion.button initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 7.3 }} className='m-3 cursor-pointer'><Link target='_blank' to="https://github.com/anunadhu1234/"><FaGithub size={30} /></Link></motion.button>
-            <motion.div className="ml-8" initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0.5,delay:7.8}}>
+            <motion.button initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 3.8 }} className={`m-3 ${btn ? 'z-4' : ''} cursor-pointer`}><Link target='_blank' to="https://www.linkedin.com/in/anurag-ghosh-b6307b220?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B521wWzu6Ta6s07uH%2BM5GhA%3D%3D"><FaLinkedin onMouseEnter={() => setBtn(true)} onMouseLeave={() => setBtn(false)} size={30} /></Link></motion.button>
+            <motion.button initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 4.3 }} className='m-3 cursor-pointer'><Link target='_blank' to="https://www.instagram.com/i_am_anurag_ghosh/"><FaInstagram size={30} /></Link></motion.button>
+            <motion.button initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 4.8 }} className='m-3 cursor-pointer'><Link target='_blank' to="https://wa.me/8175808205"><FaWhatsapp size={30} /></Link></motion.button>
+            <motion.button initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 5.3 }} className='m-3 cursor-pointer'><Link target='_blank' to="https://github.com/anunadhu1234/"><FaGithub size={30} /></Link></motion.button>
+            <motion.div className="ml-8" initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0.5,delay:5.8}}>
               <Button
                 variant="outlined"
                 size="small"
