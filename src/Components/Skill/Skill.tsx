@@ -192,7 +192,7 @@ export function Skill() {
   const [test,setTest] = useState(testimonials);
   const [i,setI] = useState(0);
 
-  return <div className="w-[100%] flex flex-col items-center bg-[#0b071e]">
+  return <div className="w-[100%] flex flex-col pt-12 items-center bg-[#0b071e]">
     <motion.h1 initial={{ x: -50, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duraion: 1 }} viewport={{ once: false, amount: 0.1 }} className="text-[50px] text-[#7551fb]">Skills</motion.h1> 
     <motion.div  className="flex flex-wrap justify-center mt-3 mb-1">
       {btn.map((item, index) => (

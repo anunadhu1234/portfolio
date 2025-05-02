@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useState, useEffect } from "react";
 
 
-function Header() {
+function Header({onHomeClick, onAboutClick, onSkillClick, onProjectClick}) {
   const navBtn = [
     "Home",
     "About",
@@ -37,7 +37,11 @@ function Header() {
       <h1 className="text-[28px] text-[#523ab9] font-bold py-3">Portfolio</h1>
       <div className="lg:flex hidden text-white justify-between py-4 gap-12 text-[20px]">
         {navBtn.map((btn, i) => (
-          <div key={i}>
+          <div key={i} onClick={() => {
+            if (btn === "Home") onHomeClick();
+            else if (btn === "About") onAboutClick();
+            else if (btn === "Skills") onSkillClick();
+            else if (btn === "Projects") onProjectClick();}}>
             <Link to={`/${btn.toLowerCase()}`} 
               onMouseEnter={() => func1(i)} 
               onMouseLeave={() => func1(i)}
