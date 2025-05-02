@@ -7,7 +7,7 @@ function Header() {
   const navBtn = [
     "Home",
     "About",
-    "Skill",
+    "Skills",
     "Education",
     "Projects",
   ];

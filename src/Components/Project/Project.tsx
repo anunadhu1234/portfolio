@@ -32,14 +32,14 @@ export function Project() {
     useOutsideClick(ref, () => setActive(null));
 
     return (
-        <div className="bg-[#0b071e] flex flex-col items-center justify-center pb-8 w-full">
-            <div className="flex flex-col items-center justify-center py-20 font-sans antialiased md:max-w-4xl md:px-8 lg:px-12">
-                <h1 className="text-[50px] text-[#7551fb]">Projects</h1>
-                <p className="text-neutral-600 dark:text-neutral-400 text-center max-w-[500px] mt-2">
+        <motion.div className="bg-[#0b071e] flex flex-col items-center justify-center pb-8 w-full">
+            <motion.div className="flex flex-col items-center justify-center py-20 font-sans antialiased md:max-w-4xl md:px-8 lg:px-12">
+                <motion.h1 initial={{opacity:0,x:-50}} transition={{duration:1}} whileInView={{opacity:1,x:0}} viewport={{once:false,amount:0.3}} className="text-[50px] text-[#7551fb]">Projects</motion.h1>
+                <motion.p initial={{opacity:0,y:50}} transition={{duration:1}} whileInView={{opacity:1,y:0}} className="text-neutral-600 dark:text-neutral-400 text-center max-w-[500px] mt-2">
                     Here are some of my projects that I have worked on. Click on any card
                     to view more details.
-                </p>
-            </div>
+                </motion.p>
+            </motion.div>
 
             <AnimatePresence>
                 {active && typeof active === "object" && (
@@ -77,7 +77,7 @@ export function Project() {
                         <motion.div
                             layoutId={`card-${active.title}-${id}`}
                             ref={ref}
-                            className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
+                            className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col bg-white dark:bg-[#0b071e] sm:rounded-3xl overflow-hidden"
                         >
                             <motion.div layoutId={`image-${active.title}-${id}`}>
                                 <img
@@ -110,7 +110,7 @@ export function Project() {
                                         layoutId={`button-${active.title}-${id}`}
                                         href={active.ctaLink}
                                         target="_blank"
-                                        className="px-4 py-3 text-sm rounded-full font-bold bg-green-500 text-white"
+                                        className="px-4 py-3 text-sm rounded-full font-bold bg-[#7551fb] text-white"
                                     >
                                         {active.ctaText1}
                                     </motion.a>
@@ -133,9 +133,13 @@ export function Project() {
                     </div>
                 ) : null}
             </AnimatePresence>
-            <ul className="grid grid-cols-3 mx-auto max-w-[90%] gap-4">
+            <motion.ul className="grid grid-cols-3 mx-auto max-w-[90%] gap-4">
                 {cards.map((card, index) => (
                     <motion.div
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.5 }}
+                    viewport={{ once: false, amount: 0.3 }}
                         layoutId={`card-${card.title}-${id}`}
                         key={`card-${card.title}-${id}`}
                         onClick={() => setActive(card)}
@@ -168,14 +172,14 @@ export function Project() {
                         </div>
                         <motion.button
                             layoutId={`button-${card.title}-${id}`}
-                            className="px-4 py-2 text-sm rounded-full font-bold bg-gray-100 hover:bg-green-500 hover:text-white text-black mt-4 md:mt-0"
+                            className="px-4 py-2 text-sm rounded-full font-bold bg-gray-100 hover:bg-[#7551fb] hover:text-white text-black mt-4 md:mt-0"
                         >
                             {card.ctaText}
                         </motion.button>
                     </motion.div>
                 ))}
-            </ul>
-        </div>
+            </motion.ul>
+        </motion.div>
     );
 }
 
