@@ -23,7 +23,7 @@
     "framer-motion": "^12.6.2",
     "lucide-react": "^0.486.0",
     "mini-svg-data-uri": "^1.4.4",
-    "motion": "^12.9.1",
+    "motion": "^12.9.4",
     "path": "^0.12.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

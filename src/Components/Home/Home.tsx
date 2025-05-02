@@ -72,14 +72,15 @@ function Home() {
                 </span>
               )}
             </div>
-            <motion.button initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 3.8 }} className={`m-3 ${btn ? 'z-4' : ''} cursor-pointer`}><Link target='_blank' to="https://www.linkedin.com/in/anurag-ghosh-b6307b220?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B521wWzu6Ta6s07uH%2BM5GhA%3D%3D"><FaLinkedin onMouseEnter={() => setBtn(true)} onMouseLeave={() => setBtn(false)} size={30} /></Link></motion.button>
-            <motion.button initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 4.3 }} className='m-3 cursor-pointer'><Link target='_blank' to="https://www.instagram.com/i_am_anurag_ghosh/"><FaInstagram size={30} /></Link></motion.button>
-            <motion.button initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 4.8 }} className='m-3 cursor-pointer'><Link target='_blank' to="https://wa.me/8175808205"><FaWhatsapp size={30} /></Link></motion.button>
-            <motion.button initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 5.3 }} className='m-3 cursor-pointer'><Link target='_blank' to="https://github.com/anunadhu1234/"><FaGithub size={30} /></Link></motion.button>
+            <motion.button  initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 3.8 }} className={`m-3 ${btn ? 'z-4' : ''} cursor-pointer`}><Link target='_blank' to="https://www.linkedin.com/in/anurag-ghosh-b6307b220?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B521wWzu6Ta6s07uH%2BM5GhA%3D%3D"><FaLinkedin className="text-white hover:text-[#7551fb] transition-colors duration-300" onMouseEnter={() => setBtn(true)} onMouseLeave={() => setBtn(false)} size={30} /></Link></motion.button>
+            <motion.button initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 4.3 }} className='m-3 cursor-pointer'><Link target='_blank' to="https://www.instagram.com/i_am_anurag_ghosh/"><FaInstagram size={30} className="text-white hover:text-[#7551fb] transition-colors duration-300" /></Link></motion.button>
+            <motion.button initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 4.8 }} className='m-3 cursor-pointer'><Link target='_blank' to="https://wa.me/8175808205"><FaWhatsapp size={30} className="text-white hover:text-[#7551fb] transition-colors duration-300" /></Link></motion.button>
+            <motion.button initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 5.3 }} className='m-3 cursor-pointer'><Link target='_blank' to="https://github.com/anunadhu1234/"><FaGithub size={30} className="text-white hover:text-[#7551fb] transition-colors duration-300" /></Link></motion.button>
             <motion.div className="ml-8" initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0.5,delay:5.8}}>
               <Button
                 variant="outlined"
                 size="small"
+                className={`border-[#7551fb] text-[#7551fb] hover:bg-[#7551fb] hover:text-white ${loading==="end"?"hidden":""}`}
                 onClick={() => {if(loading==='start'){setLoading("pause")}}}
               >
                 Download CV
