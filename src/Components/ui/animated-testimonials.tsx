@@ -1,15 +1,16 @@
 "use client";
 
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence, useMotionValue, animate } from "motion/react";
 
 import { useEffect, useState } from "react";
 
 type Testimonial = {
-  quote: string;
   name: string;
   designation: string;
   src: string;
+  progress1: number;
+  progress2: number;
 };
 export const AnimatedTestimonials = ({
   testimonials,
@@ -31,7 +32,15 @@ export const AnimatedTestimonials = ({
   const isActive = (index: number) => {
     return index === active;
   };
+  const radius = 50;
+  const stroke = 10;
+  const normalizedRadius = radius - stroke / 2;
+  const circumference = 2 * Math.PI * normalizedRadius;
+  const strokeDashoffset = circumference - (testimonials[active].progress1 / 100) * circumference;
+  const strokeDashoffset2 = circumference - (testimonials[active].progress2 / 100) * circumference;
+  const count = useMotionValue(0);
 
+ 
   useEffect(() => {
     if (autoplay) {
       const interval = setInterval(handleNext, 5000);
@@ -58,7 +67,7 @@ export const AnimatedTestimonials = ({
                     rotate: randomRotateY(),
                   }}
                   animate={{
-                    opacity: isActive(index) ? 1 : 0.7,
+                    opacity: isActive(index) ? 1 : 0.5,
                     scale: isActive(index) ? 1 : 0.95,
                     z: isActive(index) ? 0 : -100,
                     rotate: isActive(index) ? 0 : randomRotateY(),
@@ -118,7 +127,43 @@ export const AnimatedTestimonials = ({
             <p className="text-sm text-[#7551fb] dark:text-neutral-500">
               {testimonials[active].designation}
             </p>
-           
+            <div className="grid grid-cols-2 items-center gap-x-4  pt-8 text-[#7551fb]">
+              <motion.svg className="h-32 w-32"><circle stroke="black" fill="none" strokeWidth={stroke} r={normalizedRadius} cx={60} cy={60} />
+                <motion.circle stroke="#7551fb" fill="transparent" strokeWidth={stroke} r={normalizedRadius} cx={60} cy={60} strokeLinecap="round" strokeDasharray={circumference} strokeDashoffset={circumference}  animate={{ strokeDashoffset }} transition={{ duration: 1 }} transform="rotate(-90 60 60)"/></motion.svg>
+      <motion.svg className="h-32 w-32"><circle stroke="black" fill="none" strokeWidth={stroke} r={normalizedRadius} cx={60} cy={60} />
+                <motion.circle stroke="#7551fb" fill="transparent" strokeWidth={stroke} r={normalizedRadius} cx={60} cy={60} strokeLinecap="round" strokeDasharray={circumference} strokeDashoffset={circumference}  animate={{ strokeDashoffset:strokeDashoffset2 }} transition={{ duration: 1 }} transform="rotate(-90 60 60)"/></motion.svg>
+                
+              <h1 className="text-center font-bold">Knowledge Depth</h1>
+              <h1 className="text-center font-bold">Practical Experience</h1>
+              <div
+        style={{
+          position: "absolute",
+          top: "44%",
+          left: "61.3%",
+         color: "#7551fb",
+          fontSize: "24px",
+          fontWeight: "bold",
+          zIndex: 1000,
+          
+        }}
+      >
+        {testimonials[active].progress1}%
+      </div>
+      <div
+        style={{
+          position: "absolute",
+          top: "44%",
+          left: "84.5%",
+         color: "#7551fb",
+          fontSize: "24px",
+          fontWeight: "bold",
+          zIndex: 1000,
+          
+        }}
+      >
+        {testimonials[active].progress2}%
+      </div>
+            </div>
           </motion.div>
           <div className="flex gap-4 pt-12 md:pt-0">
             <button
