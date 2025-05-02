@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './Components/Home/Home'
 import About from './Components/About/About'
 import {Skill} from './Components/Skill/Skill'
+import {Project} from './Components/Project/Project'
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
      <Home/>
      <About/>
      <Skill/>
+     <Project/>
      </Router>
     </>
   )
