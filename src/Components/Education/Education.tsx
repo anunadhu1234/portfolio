@@ -60,7 +60,7 @@ export function Education() {
               High School (Class 10th)
             </p>
             <p className="mb-1 text-base font-bold text-neutral-800 md:text-sm dark:text-neutral-200">
-              Universal Public School, Chandauli
+              Sunbeam School, Mughalsarai
             </p>
             <p className="mb-3 text-base font-bold text-neutral-800 md:text-sm dark:text-neutral-200">
               Percentage: 90% {/* Replace with actual if known */}
