@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useState, useEffect } from "react";
 
 
-function Header({onHomeClick, onAboutClick, onSkillClick, onProjectClick}) {
+function Header({onHomeClick, onAboutClick, onSkillClick, onProjectClick, onEducationClick}) {
   const navBtn = [
     "Home",
     "About",
@@ -41,8 +41,9 @@ function Header({onHomeClick, onAboutClick, onSkillClick, onProjectClick}) {
             if (btn === "Home") onHomeClick();
             else if (btn === "About") onAboutClick();
             else if (btn === "Skills") onSkillClick();
-            else if (btn === "Projects") onProjectClick();}}>
-            <Link to={`/${btn.toLowerCase()}`} 
+            else if (btn === "Projects") onProjectClick();
+            else if (btn === "Education") onEducationClick();}}>
+            <Link to={`/`} 
               onMouseEnter={() => func1(i)} 
               onMouseLeave={() => func1(i)}
             >
