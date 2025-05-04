@@ -192,14 +192,14 @@ export function Skill() {
   const [test,setTest] = useState(testimonials);
   const [i,setI] = useState(0);
 
-  return <div className="w-[100%] flex flex-col pt-12 items-center bg-[#0b071e]">
+  return <div className="w-[100%] flex flex-col pt-12 items-center bg-[#0b071e] overflow-x-hidden">
     <motion.h1 initial={{ x: -100, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duraion: 1 }} viewport={{ once: false, amount: 0.1 }} className="text-[50px] text-[#7551fb]">Skills</motion.h1> 
-    <motion.div  className="flex flex-wrap justify-center mt-3 mb-1">
+    <motion.div  className="flex lg:flex-row flex-col justify-center mt-3 mb-1">
       {btn.map((item, index) => (
         <motion.button initial={{y:50, opacity:0}} whileInView={{y:0,opacity:1}} transition={{duration: 0.5, delay:index*0.4}} viewport={{once:false, amount:0.1}} key={index} onClick={()=>{setI(index); console.log(i);
 if(item!=="All"){
   setTest(testimonials.filter((test) => test.designation === item));
-        }else setTest(testimonials)}} className={`border shadow-lg font-bold text-white ${i===index?'bg-[#7551fb]':''} cursor-pointer hover:bg-[#7551fb] hover:!text-opacity-0 py-1 border-[#7551fb] px-4 border-[2px] first:rounded-l-lg last:rounded-r-lg`}>{item}</motion.button>
+        }else setTest(testimonials)}} className={`border shadow-lg font-bold text-white ${i===index?'bg-[#7551fb]':''} cursor-pointer hover:bg-[#7551fb] hover:!text-opacity-0 py-1 border-[#7551fb] px-4 border-[2px] lg:first:rounded-l-lg lg:last:rounded-r-lg`}>{item}</motion.button>
         ))}
     </motion.div>
     <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: false, amount: 0.1 }} transition={{ duration: 1, delay:3.3 }}><AnimatedTestimonials testimonials={test} /></motion.div> 

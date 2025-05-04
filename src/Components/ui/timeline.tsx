@@ -38,7 +38,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       className="w-full bg-white dark:bg-[#0b071e] font-sans md:px-10"
       ref={containerRef}
     >
-      <div className="max-w-7xl mx-auto py-4">
+      <div className="lg:max-w-xl max-w-screen lg:mx-auto mx-2  py-4">
         <h2 className="text-[45px] mt-24 mb-4 text-[#7551fb] max-w-4xl">
           Education
         </h2>

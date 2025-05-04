@@ -51,6 +51,7 @@ export const AnimatedTestimonials = ({
   const randomRotateY = () => {
     return Math.floor(Math.random() * 21) - 10;
   };
+  const isMobile = window.innerWidth < 600;
   return (
     <div className="mx-auto max-w-sm px-4 py-20 font-sans antialiased md:max-w-4xl md:px-8 lg:px-12">
       <div className="relative grid grid-cols-1 gap-20 md:grid-cols-2">
@@ -138,12 +139,12 @@ export const AnimatedTestimonials = ({
               <div
         style={{
           position: "absolute",
-          top: "44%",
-          left: "61.3%",
+          top: isMobile?"73%":"44%",
+          left: isMobile?"13%":"61.3%",
          color: "#7551fb",
           fontSize: "24px",
           fontWeight: "bold",
-          zIndex: 1000,
+          zIndex: 20,
           
         }}
       >
@@ -152,12 +153,13 @@ export const AnimatedTestimonials = ({
       <div
         style={{
           position: "absolute",
-          top: "44%",
-          left: "84.5%",
+          top: isMobile?"73%":"44%",
+          left: isMobile?"65%":"84.5%",
          color: "#7551fb",
           fontSize: "24px",
           fontWeight: "bold",
-          zIndex: 1000,
+          zIndex: 20,
+          
           
         }}
       >

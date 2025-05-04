@@ -7,8 +7,10 @@ import Home from './Components/Home/Home'
 import About from './Components/About/About'
 import {Skill} from './Components/Skill/Skill'
 import {Project} from './Components/Project/Project'
-import { Education } from './Components/Education/Education'
+import  {Education}  from './Components/Education/Education'
 import FloatingContact from './Components/FloatingContact/Floating Contact'
+import Footer from './Components/Footer/Footer'
+
 
 function App() {
   const homeRef = useRef(null);
@@ -32,6 +34,7 @@ function App() {
     <div  ref={educationRef}> <Education/></div>
      <div ref={projectRef}> <Project/></div>
      <FloatingContact/>
+     <Footer/>
      </Router>
     </>
   )

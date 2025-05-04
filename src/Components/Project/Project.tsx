@@ -32,7 +32,7 @@ export function Project() {
     useOutsideClick(ref, () => setActive(null));
 
     return (
-        <motion.div className="bg-[#0b071e] flex flex-col items-center justify-center pb-8 w-full">
+        <motion.div className="bg-[#0b071e] flex flex-col pb-44  items-center justify-center pb-8 w-full max-w-screen overflow-hidden">
             <motion.div className="flex flex-col items-center justify-center py-20 font-sans antialiased md:max-w-4xl md:px-8 lg:px-12">
                 <motion.h1 initial={{opacity:0,x:-50}} transition={{duration:1}} whileInView={{opacity:1,x:0}} viewport={{once:false,amount:0.3}} className="text-[50px] text-[#7551fb]">Projects</motion.h1>
                 <motion.p initial={{opacity:0,y:50}} transition={{duration:1}} whileInView={{opacity:1,y:0}} className="text-neutral-600 dark:text-neutral-400 text-center max-w-[500px] mt-2">
