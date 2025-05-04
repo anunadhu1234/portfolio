@@ -1,5 +1,5 @@
 import { useState,  useEffect } from "react"
-import { Mail, Phone, MessageCircle, Plus, X } from "lucide-react";
+import { Mail, Phone, MessageCircle, PhoneCall, X } from "lucide-react";
 
 function FloatingContact (){
     const [open, setOpen] = useState(false);
@@ -53,7 +53,7 @@ function FloatingContact (){
         onClick={toggleOpen}
         className={`w-14 h-14 rounded-full ${scrolled?'bg-blue-600':'bg-blue-800'} hover:bg-blue-700 text-white flex items-center justify-center shadow-lg transition`}
       >
-        {open ? <X size={28} /> : <Plus size={28} />}
+        {open ? <X size={28} /> : <PhoneCall size={28} />}
       </button>
     </div>
     )
