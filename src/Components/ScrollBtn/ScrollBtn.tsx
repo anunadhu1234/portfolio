@@ -21,7 +21,7 @@ function ScrollBtn() {
       isVisible && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-6 left-6 flex justify-center items-center bg-blue-600 text-white rounded-full w-14 h-14 shadow-lg hover:bg-blue-700 transition"
+          className="fixed bottom-6 left-6 flex justify-center items-center bg-blue-600 text-white rounded-full w-14 h-14 shadow-lg hover:bg-blue-700 z-1000 transition"
         >
           <ArrowBigUpDash size={28} />
         </button>

@@ -60,7 +60,7 @@ function Header({onHomeClick, onAboutClick, onSkillClick, onProjectClick, onEduc
      
         <button className="lg:hidden block text-white" onClick={toggleOpen}>{!open? <Menu size={28}/>:<X size={28}/>}</button>
         {open && (
-          <div className="top-16 w-full" >
+          <div className={`top-16 w-full ${scrolled?"bg-transparent":"bg-[#0b071e]"} col-span-5`} >
             <ul>
               {navBtn.map((btn,i)=>{
                 return(
