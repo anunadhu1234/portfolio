@@ -34,7 +34,7 @@ const About = () => {
 
       {/* Colored Box */}
       <motion.div initial={{opacity:0,x:100}} whileInView={{opacity:1,x:0}} transition={{duration:1}} viewport={{once:false,amount:0.3}} className="md:w-[500px] lg:my-0  mx-auto my-auto flex flex-col text-[20px] justify-center  px-4 text-justify h-[200px] bg-transparent text-[#7551fb] z-28 rounded-lg">
-      <motion.div  className="relative w-full h-60 p-6 text-[#7551fb] font-semibold flex items-center justify-center bg-transparent"
+      <motion.div  className="relative w-full h-100 p-6 text-[#7551fb] font-semibold flex items-center justify-center bg-transparent"
       onMouseMove={(e) => {
         handleMouseMove(e);
         setIsHovered(true);
