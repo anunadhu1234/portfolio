@@ -44,7 +44,8 @@ function Home() {
     {image: "https://files.logomakr.com/5YdHed-LogoMakr.png",},
 
   ]
-  const [pic,setPic] = useState("");
+  const [pic,setPic] = useState("https://files.logomakr.com/5YdHed-LogoMakr.png");
+  
   useEffect(()=>{
     const interval = setInterval(() => {
       const randomIndex = Math.floor(Math.random() * set.length);
@@ -56,17 +57,17 @@ function Home() {
   return (
     <>
     <div className="hidden lg:block relative max-w-screen min-h-screen">
-    <div className="h-20 w-52 bg-transparent absolute z-10 ml-[44%] mt-[20%]">
+    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{duration:1,delay:1}} className="h-20 w-52 bg-transparent border-none absolute z-10 ml-[44%] mt-[20%]">
 
-      <motion.img initial={{scale:0.5}} animate={{scale:1}} transition={{duration:0.5,delay:2}} src={pic} alt="" className='h-full w-full' />
-    </div>
+      <motion.img  src={pic} alt="" className='h-full w-full' />
+    </motion.div>
       {/* Home Section */}
       <section className="relative bg-[#7551fb] min-h-screen max-w-screen">
         
         <motion.img
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 1.5 }}
           src='https://res.cloudinary.com/dmr86c1jv/image/upload/v1743312129/aj-removebg-preview_tq3zq8.png'
           className="absolute ml-[58.5vw] z-20"
           alt="Anurag"
@@ -88,7 +89,7 @@ function Home() {
                   cursor
                   cursorBlinking
                   cursorStyle='|'
-                  typeSpeed={1}
+                  typeSpeed={30}
                   deleteSpeed={0}
                 />
                 </span>
