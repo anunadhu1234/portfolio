@@ -10,6 +10,7 @@ import {Project} from './Components/Project/Project'
 import  {Education}  from './Components/Education/Education'
 import FloatingContact from './Components/FloatingContact/Floating Contact'
 import Footer from './Components/Footer/Footer'
+import ScrollBtn from './Components/ScrollBtn/ScrollBtn'
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
      <div ref={projectRef}> <Project/></div>
      <FloatingContact/>
      <Footer/>
+     <ScrollBtn/>
      </Router>
     </>
   )
