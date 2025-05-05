@@ -6,6 +6,7 @@ import { Button, IconButton } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
 import DownloadDoneIcon from '@mui/icons-material/DownloadDone';
 import { Link } from 'react-router-dom';
+
 function Home() {
   const [typewriter, setTypewriter] = useState(false);
   
@@ -43,9 +44,22 @@ function Home() {
     {image: "https://files.logomakr.com/5YdHed-LogoMakr.png",},
 
   ]
+  const [pic,setPic] = useState("");
+  useEffect(()=>{
+    const interval = setInterval(() => {
+      const randomIndex = Math.floor(Math.random() * set.length);
+      setPic(set[randomIndex].image);
+    }, 2000); // Change image every 3 seconds
+
+    return () => clearInterval(interval); // Cleanup interval on component unmount  
+  })
   return (
     <>
     <div className="hidden lg:block relative max-w-screen min-h-screen">
+    <div className="h-20 w-52 bg-transparent absolute z-10 ml-[44%] mt-[20%]">
+
+      <motion.img initial={{scale:0.5}} animate={{scale:1}} transition={{duration:0.5,delay:2}} src={pic} alt="" className='h-full w-full' />
+    </div>
       {/* Home Section */}
       <section className="relative bg-[#7551fb] min-h-screen max-w-screen">
         
@@ -57,34 +71,34 @@ function Home() {
           className="absolute ml-[58.5vw] z-20"
           alt="Anurag"
         />
+          
         <div className="absolute z-24 h-full w-[40vw] bg-[#0b071e] text-white">
           <div className="relative top-[35vh] left-[10%]">
             <motion.p initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="text-[40px] font-bold">Anurag Ghosh</motion.p>
-            <motion.div className="w-4/5"
+            <motion.div className="w-4/5 h-[50px]"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 1 }}
-            > I am a {' '}
+            >
               {typewriter && (
-                <span className="text-[25px] font-bold text-[#7551fb]">
+                <span className="text-[15px] font-normal text-white">
                 <Typewriter
-                  words={["Software Developer", "MERN Stack Developer", "Machine Learning Enthusiast", "Cloud Computing Enthusiast"]}
-                  loop={Infinity}
+                  words={["I'm a Software Developer skilled in MERN Stack, Python, Machine Learning, and Cloud Computing (AWS). I love building scalable web applications, optimizing backend performance, and working with cutting-edge technologies to solve real-world problems."]}
+                  loop={0}
                   cursor
                   cursorBlinking
                   cursorStyle='|'
-                  typeSpeed={50}
-                  deleteSpeed={10}
-                  
+                  typeSpeed={1}
+                  deleteSpeed={0}
                 />
                 </span>
               )}
             </motion.div>
-            <motion.button  initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 2.3 }} className={`m-3 ${btn ? 'z-4' : ''} cursor-pointer`}><Link target='_blank' to="https://www.linkedin.com/in/anurag-ghosh-b6307b220?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B521wWzu6Ta6s07uH%2BM5GhA%3D%3D"><FaLinkedin className="text-white hover:text-[#7551fb] transition-colors duration-300" onMouseEnter={() => setBtn(true)} onMouseLeave={() => setBtn(false)} size={30} /></Link></motion.button>
-            <motion.button initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 2.8 }} className='m-3 cursor-pointer'><Link target='_blank' to="https://www.instagram.com/i_am_anurag_ghosh/"><FaInstagram size={30} className="text-white hover:text-[#7551fb] transition-colors duration-300" /></Link></motion.button>
-            <motion.button initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 3.3 }} className='m-3 cursor-pointer'><Link target='_blank' to="https://wa.me/8175808205"><FaWhatsapp size={30} className="text-white hover:text-[#7551fb] transition-colors duration-300" /></Link></motion.button>
-            <motion.button initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 3.8 }} className='m-3 cursor-pointer'><Link target='_blank' to="https://github.com/anunadhu1234/"><FaGithub size={30} className="text-white hover:text-[#7551fb] transition-colors duration-300" /></Link></motion.button>
-            <motion.div className="ml-8" initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0.5,delay:4.3}}  >
+            <motion.button  initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 4.3 }} className={`m-3 mt-14 ${btn ? 'z-4' : ''} cursor-pointer`}><Link target='_blank' to="https://www.linkedin.com/in/anurag-ghosh-b6307b220?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B521wWzu6Ta6s07uH%2BM5GhA%3D%3D"><FaLinkedin className="text-white hover:text-[#7551fb] transition-colors duration-300" onMouseEnter={() => setBtn(true)} onMouseLeave={() => setBtn(false)} size={30} /></Link></motion.button>
+            <motion.button initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 4.8 }} className='m-3 mt-14 cursor-pointer'><Link target='_blank' to="https://www.instagram.com/i_am_anurag_ghosh/"><FaInstagram size={30} className="text-white hover:text-[#7551fb] transition-colors duration-300" /></Link></motion.button>
+            <motion.button initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 5.3 }} className='m-3 mt-14 cursor-pointer'><Link target='_blank' to="https://wa.me/8175808205"><FaWhatsapp size={30} className="text-white hover:text-[#7551fb] transition-colors duration-300" /></Link></motion.button>
+            <motion.button initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 5.8 }} className='m-3 mt-14 cursor-pointer'><Link target='_blank' to="https://github.com/anunadhu1234/"><FaGithub size={30} className="text-white hover:text-[#7551fb] transition-colors duration-300" /></Link></motion.button>
+            <motion.div className="ml-8" initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0.5,delay:6.3}}  >
               <Button
                 variant="outlined"
                 size="small"
