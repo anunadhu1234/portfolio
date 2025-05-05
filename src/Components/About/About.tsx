@@ -15,7 +15,7 @@ const About = () => {
   };
   
   return (
-    <div className="relative overflow-hidden  lg:w-full max-w-screen w-auto h-screen bg-[#0b071e] lg:pt-64 pt-24 flex lg:flex-row flex-col lg:justify-around lg:overflow-hidden">
+    <div className="relative overflow-hidden  lg:w-full max-w-screen w-auto h-screen bg-[#0b071e] lg:pt-64 pt-0 flex lg:flex-row flex-col lg:justify-around lg:overflow-hidden">
       {window.innerWidth>1118?<Boxes/>:null}
       <motion.h1 initial={{opacity:0,x:-100}} whileInView={{opacity:1,x:0}} transition={{duration:1}} viewport={{once:false,amount:0.3}} className="z-28 text-bold text-[#7551fb] mx-auto md:mb-28 text-[50px]">About Me</motion.h1>
       <motion.div initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:1}} viewport={{once:false,amount:0.3}}>
@@ -49,7 +49,44 @@ const About = () => {
         WebkitBackgroundClip: "text",
         color: "#7551fb", // Makes the text take background color
         
-      }} className="text-[15px] md:text-[20px]">I'm a Software Developer skilled in MERN Stack, Python, Machine Learning, and Cloud Computing (AWS). I love building scalable web applications, optimizing backend performance, and working with cutting-edge technologies to solve real-world problems.</motion.p></motion.div>
+      }} className="text-[15px] md:text-[20px]">
+        <ul className="space-y-2">
+  <li className="relative pl-6 before:content-['✔️'] before:absolute before:left-0 before:top-0 text-justify text-left">
+    Qualification: B.Tech from NIT Warangal
+  </li>
+
+  <li className="relative pl-6 before:content-['✔️'] before:absolute before:left-0 before:top-0 text-justify text-left">
+    Experience:
+    <ul className="mt-1 ml-4 space-y-1">
+      <li className="relative pl-6 before:content-['🔹'] before:absolute before:left-0 before:top-0 text-justify text-left">
+        Business Analytics Intern at Outlook
+      </li>
+      <li className="relative pl-6 before:content-['🔹'] before:absolute before:left-0 before:top-0 text-justify text-left">
+        Upcoming DE at Tredence
+      </li>
+    </ul>
+  </li>
+
+  <li className="relative pl-6 before:content-['✔️'] before:absolute before:left-0 before:top-0 text-justify text-left">
+    Home: Mughalsarai, Uttar Pradesh
+  </li>
+
+  <li className="relative pl-6 before:content-['✔️'] before:absolute before:left-0 before:top-0 text-justify text-left">
+    Achievements:
+    <ul className="mt-1 ml-4 space-y-1">
+      <li className="relative pl-6 before:content-['🏅'] before:absolute before:left-0 before:top-0 text-justify text-left">
+        Jee Mains Rank: 14778, Jee Advance Rank: 12400
+      </li>
+      <li className="relative pl-6 before:content-['🥉'] before:absolute before:left-0 before:top-0 text-justify text-left">
+        3rd Runner Up in Tri-NIT Hackathon
+      </li>
+      <li className="relative pl-6 before:content-['🥈'] before:absolute before:left-0 before:top-0 text-justify text-left">
+        2nd City Rank in International Mathematics Olympiad
+      </li>
+    </ul>
+  </li>
+</ul>
+        </motion.p></motion.div>
       </motion.div>
     </div>
   );
